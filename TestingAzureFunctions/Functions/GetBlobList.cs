@@ -30,12 +30,9 @@ namespace TestingAzureFunctions.Fnt.Functions
             {
                 log.LogInformation($"{nameof(GetBlobList)} proccess with guid: {proccesId} started at: {DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss tt")}");
                 var client = BlobStoregeService.GetBlobContainerClient();
-                List<string> blobNames = new List<string>();
-                await foreach (BlobItem blobItem in BlobStoregeService.GetBlobsListAsync(client))
-                {
-                    blobNames.Add(blobItem.Name);                    
-                }
-
+                log.LogInformation($"{nameof(GetBlobList)} proccess with guid: {proccesId} - Retrieving blob list ");
+                List<string> blobNames = await BlobStoregeService.GetBlobsListAsync(client);
+                log.LogInformation($"{nameof(GetBlobList)} proccess with guid: {proccesId} - Blob list retieved with {blobNames.Count} blob names");
                 return new OkObjectResult(blobNames.ToArray());
             }
             catch(Exception ex)

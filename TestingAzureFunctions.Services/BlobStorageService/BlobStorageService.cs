@@ -4,6 +4,8 @@ using Azure;
 using Azure.Storage.Blobs.Models;
 using Azure.Storage.Blobs;
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace TestingAzureFunctions.Services
 {
@@ -18,11 +20,16 @@ namespace TestingAzureFunctions.Services
             ContainerName = appSettings.BlobStorageSettings.ContainerName;
         }
 
-        public AsyncPageable<BlobItem> GetBlobsListAsync(BlobContainerClient container)
+        public async Task<List<string>> GetBlobsListAsync(BlobContainerClient container)
         {
             try
             {
-                return container.GetBlobsAsync();
+                List<string> blobNames = new List<string>();
+                await foreach (BlobItem blobItem in container.GetBlobsAsync())
+                {
+                    blobNames.Add(blobItem.Name);
+                }
+                return blobNames;
             }
             catch (Exception ex)
             {
