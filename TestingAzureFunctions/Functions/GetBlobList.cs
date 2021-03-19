@@ -10,10 +10,10 @@ using Newtonsoft.Json;
 
 namespace TestingAzureFunctions.Fnt.Functions
 {
-    public static class GetBlobList
+    public class GetBlobList
     {
         [FunctionName("GetBlobList")]
-        public static async Task<IActionResult> Run(
+        public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
