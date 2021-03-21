@@ -62,6 +62,8 @@ namespace TestingAzureFunctions.Tests
             Assert.Contains("Error getting the blob list", listLogger.Logs.Last());
         }
 
+        #region Private methods
+
         private IBlobStorageService GetMockBlobService(bool withData)
         {
             var mockBlobService = new Mock<IBlobStorageService>();
@@ -82,5 +84,7 @@ namespace TestingAzureFunctions.Tests
             }
             return blobList;
         }
+
+        #endregion        
     }
 }
