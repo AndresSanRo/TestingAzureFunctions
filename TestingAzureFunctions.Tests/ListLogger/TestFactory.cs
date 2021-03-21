@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 
-namespace TestingAzureFunctions.Tests.ListLogger
+namespace TestingAzureFunctions.Tests
 {
     public class TestFactory
     {
