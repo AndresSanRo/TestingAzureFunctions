@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TestingAzureFunctions.Tests.ListLogger
+namespace TestingAzureFunctions.Tests
 {
     public class NullScope : IDisposable
     {
