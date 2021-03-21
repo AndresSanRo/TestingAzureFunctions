@@ -9,5 +9,7 @@ namespace TestingAzureFunctions.Services.Abstract
         Task<List<string>> GetBlobsListAsync(BlobContainerClient container);
 
         BlobContainerClient GetBlobContainerClient();
+
+        BlobClient GetBlobClient();
     }
 }

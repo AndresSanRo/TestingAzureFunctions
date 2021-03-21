@@ -12,12 +12,16 @@ namespace TestingAzureFunctions.Services
     public class BlobStorageService : IBlobStorageService
     {
         public string ConnectionString { get; private set; }
+        
         public string ContainerName { get; private set; }
+
+        public string BlobName { get; set; }
 
         public BlobStorageService(IAppSettings appSettings)
         {
             ConnectionString = appSettings.BlobStorageSettings.StorageConnectionString;
             ContainerName = appSettings.BlobStorageSettings.ContainerName;
+            BlobName = appSettings.BlobStorageSettings.BlobName;
         }
 
         public async Task<List<string>> GetBlobsListAsync(BlobContainerClient container)
@@ -38,5 +42,7 @@ namespace TestingAzureFunctions.Services
         }
 
         public BlobContainerClient GetBlobContainerClient() => new BlobContainerClient(ConnectionString, ContainerName);
+
+        public BlobClient GetBlobClient() => new BlobClient(ConnectionString, ContainerName, BlobName);
     }
 }

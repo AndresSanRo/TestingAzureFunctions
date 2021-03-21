@@ -9,13 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Functions", "01-Function
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Services", "02-Services", "{76199CF3-316A-4623-AF56-935E802030CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingAzureFunctions.Services", "TestingAzureFunctions.Services\TestingAzureFunctions.Services.csproj", "{DBA54900-4ED2-4E87-BE49-EAEAB0DDDE44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestingAzureFunctions.Services", "TestingAzureFunctions.Services\TestingAzureFunctions.Services.csproj", "{DBA54900-4ED2-4E87-BE49-EAEAB0DDDE44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingAzureFunctions.Services.Abstract", "TestingAzureFunctions.Services.Abstract\TestingAzureFunctions.Services.Abstract.csproj", "{E1D88A0E-C82F-41F6-A57A-FAC1655FEB91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestingAzureFunctions.Services.Abstract", "TestingAzureFunctions.Services.Abstract\TestingAzureFunctions.Services.Abstract.csproj", "{E1D88A0E-C82F-41F6-A57A-FAC1655FEB91}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Models", "03-Models", "{8E499A29-3686-4B75-A30D-7ECCDAC34F6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingAzureFunctions.Models", "TestingAzureFunctions.Models\TestingAzureFunctions.Models.csproj", "{C0D57381-0955-4B69-A5CE-07E136F00DAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestingAzureFunctions.Models", "TestingAzureFunctions.Models\TestingAzureFunctions.Models.csproj", "{C0D57381-0955-4B69-A5CE-07E136F00DAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
