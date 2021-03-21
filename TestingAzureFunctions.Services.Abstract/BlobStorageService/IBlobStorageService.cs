@@ -1,4 +1,5 @@
 ﻿using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -10,6 +11,6 @@ namespace TestingAzureFunctions.Services.Abstract
 
         BlobContainerClient GetBlobContainerClient();
 
-        BlobClient GetBlobClient();
+        Task<BlobDownloadInfo> DownloadBlobAsync();
     }
 }

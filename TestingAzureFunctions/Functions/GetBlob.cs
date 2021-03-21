@@ -18,18 +18,15 @@ namespace TestingAzureFunctions.Fnt.Functions
         }
 
         [FunctionName(nameof(GetBlob))]
-        public async Task Run([TimerTrigger("0 0/2 * * * *")]TimerInfo myTimer, ILogger log)
+        public async Task Run([TimerTrigger("0 0 1 * * *")]TimerInfo myTimer, ILogger log)
         {
             string proccesId = Guid.NewGuid().ToString();
             try
             {
                 log.LogInformation($"{nameof(GetBlob)} proccess with guid: {proccesId} started at: {DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss tt")}");
-                
-                log.LogInformation($"{nameof(GetBlob)} proccess with guid: {proccesId} - Get blob client");
-                var client = BlobStorageService.GetBlobClient();
-                
+                                                
                 log.LogInformation($"{nameof(GetBlob)} proccess with guid: {proccesId} - Download blob");
-                BlobDownloadInfo blob = await client.DownloadAsync();
+                BlobDownloadInfo blob = await BlobStorageService.DownloadBlobAsync();
                 
                 log.LogInformation($"{nameof(GetBlob)} proccess with guid: {proccesId} - Reading blob content");
                 using (var streamReader = new StreamReader(blob.Content))

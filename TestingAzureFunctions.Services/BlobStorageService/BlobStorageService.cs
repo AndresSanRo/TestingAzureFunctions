@@ -43,6 +43,10 @@ namespace TestingAzureFunctions.Services
 
         public BlobContainerClient GetBlobContainerClient() => new BlobContainerClient(ConnectionString, ContainerName);
 
-        public BlobClient GetBlobClient() => new BlobClient(ConnectionString, ContainerName, BlobName);
+        public async Task<BlobDownloadInfo> DownloadBlobAsync()
+        {
+            var client = new BlobClient(ConnectionString, ContainerName, BlobName);
+            return await client.DownloadAsync();
+        }
     }
 }
