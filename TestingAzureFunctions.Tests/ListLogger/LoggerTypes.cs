@@ -1,4 +1,4 @@
-﻿namespace TestingAzureFunctions.Tests.ListLogger
+﻿namespace TestingAzureFunctions.Tests
 {
     public enum LoggerTypes
     {

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace TestingAzureFunctions.Tests.ListLogger
+namespace TestingAzureFunctions.Tests
 {
     public class ListLogger : ILogger
     {
